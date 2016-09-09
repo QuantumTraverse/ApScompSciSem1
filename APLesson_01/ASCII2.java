@@ -37,12 +37,10 @@ public class ASCII2
 		System.out.println(".................................+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+.................................");
 		System.out.println("................................oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo................................");
 		System.out.println("...............................yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy...............................");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
+		System.out.println(".............................-hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh-.............................");
+		System.out.println(".............................+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+.............................");
+		System.out.println("...............................-+ydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-...............................");
+		System.out.println("...................................-:+shdmMMMMMMMMMMMMMMMMmdhs+:-...................................");
+		System.out.println("...........................................-://++++++//:-...........................................");
 	}
 }

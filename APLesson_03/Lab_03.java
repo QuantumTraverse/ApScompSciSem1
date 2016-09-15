@@ -11,12 +11,14 @@ public class Lab_03
 	String last = keyboard.next();
 	System.out.println("What is your father's first name?");
 	String father = keyboard.next();
-	//System.out.println("Are you a boy? (Answer true or false)");
-	//boolean boy = keyboard.boolean();
-	System.out.println("Your Russian name would be: " + first + " "+ father +"evich " + last + " OR " + first + " " + father + "ovich " + last); {
-		if(boy = true)	
-	}
-	else (System.out.println("Or if you are a girl: " + first + " "+ father +"evna " + last + " OR " + first + " " + father + "ovna " + last);
-	)
+	System.out.println("Are you a boy or a girl? (Answer boy or girl)");
+	String boy = keyboard.next();
+		if(boy.equals("boy"))	{
+			System.out.println("Your Russian name would be: " + first + " "+ father +"evich " + last + " OR " + first + " " + father + "ovich " + last);
+		} else if(boy.equals("girl")){
+			System.out.println("Or if you are a girl: " + first + " "+ father +"evna " + last + " OR " + first + " " + father + "ovna " + last);
+		} else {
+			System.out.println("Error");
+		}
 	}
 }

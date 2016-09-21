@@ -10,27 +10,26 @@ public class idCard
 		System.out.println("Please enter your first name:");
 		String first = kb.next();
 		System.out.println("Please enter your last name:");
-		String laqst = kb.next();
+		String last = kb.next();
 		System.out.println("Please enter your title:");
-		String item2 = kb.next();
+		String title = kb.next();
 		System.out.println("Please enter the school site:");
-		String price2 = kb.next();
+		String site = kb.next();
 		System.out.println("Please enter the school year:");
-		String item3 = kb.next();
+		String year = kb.next();
 		System.out.println("Please enter your subject:");
-		String price3 = kb.next();
+		String subject = kb.next();
 		
-		System.out.println("************************************");
-		form.format(item1, price1);
-		form.format(item2, price2);
-		form.format(item3, price3);
-		System.out.println("\n************************************");
-		System.out.println("* Thanks for your support *");
+		System.out.println("*************************");
+		form.format(site, year);
+		form.format(first, last);
+		form.format(title, subject);
+		System.out.println("*************************");
 	}
 	
-	public void format(String word, double number)
+	public void format(String word, String other)
 	{
-		System.out.printf("\n*%10s ************** %4.2f", word, number);
+		System.out.printf("*%10s %12s*\n", word, other);
 	}
 	
 }

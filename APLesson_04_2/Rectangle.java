@@ -11,7 +11,7 @@ public class Rectangle
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Please enter the length:");
 		l = kb.nextDouble();
-		System.out.println("Please enter the widthj:");
+		System.out.println("Please enter the width:");
 		w = kb.nextDouble();
 		calc();
 		print();
@@ -19,12 +19,12 @@ public class Rectangle
 	
 	public static void calc()
 	{
-		perimeter = 2*l+2*w;
+		perimeter = 2.0*l+2.0*w;
 	}
 	
 	public static void print()
 	{
-		System.out.println("Your perimter is " + perimeter + " ft around.");
+		System.out.printf("Your perimter is %.5f ft around.",perimeter);
 	}
 	
 }

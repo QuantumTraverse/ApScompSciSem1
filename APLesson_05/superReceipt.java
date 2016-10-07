@@ -11,7 +11,6 @@ public class superReceipt
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		superReceipt form = new superReceipt();
 		
 		System.out.println("Please enter item 1:");
 		String item1 = kb.next();
@@ -35,23 +34,23 @@ public class superReceipt
 		total = taxationistheft+subtotal;
 		
 		System.out.println("-=-=-=-=-=-=-=-=-Receipt-=-=-=-=-=-=-=-=-");
-		form.format(item1, price1);
-		form.format(item2, price2);
-		form.format(item3, price3);
-		form.format(item4, price4);
+		format(item1, price1);
+		format(item2, price2);
+		format(item3, price3);
+		format(item4, price4);
 		System.out.println("");
-		form.format("Subtotal", subtotal);
-		form.format("Tax", taxationistheft);
+		format("Subtotal", subtotal);
+		format("Tax", taxationistheft);
 		discount();
 		System.out.printf("\n*%10s ******************** %6.2s%%", "Discount", thereisnoSuchThingasaFreeLunch);
-		form.format("Total", total);
+		format("Total", total);
 		System.out.println("\n----------------------------------------");
 		System.out.println("* Thanks for your support (Not Really) *");
 	}
 	
-	public void format(String word, double number)
+	public static void format(String word, double number)
 	{
-		System.out.printf("\n*%10s ******************** %4.2f", word, number);
+		System.out.printf("\n*%10s ******************** %7.2f", word, number);
 	}
 	
 	public static void discount()

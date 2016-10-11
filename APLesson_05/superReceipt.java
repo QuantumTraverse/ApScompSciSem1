@@ -4,6 +4,7 @@ import java.util.Random;
 public class superReceipt
 {
 	static double subtotal;
+	static double secondsubtotal;
 	static double taxationistheft;
 	static double total;
 	static String thereisnoSuchThingasaFreeLunch;
@@ -30,8 +31,9 @@ public class superReceipt
 		double price4 = kb.nextDouble();
 		
 		subtotal = price1+price2+price3+price4;
-		taxationistheft = 0.08 * subtotal;
-		total = taxationistheft+subtotal;
+		discount();
+		taxationistheft = 0.08 * secondsubtotal;
+		total = taxationistheft+secondsubtotal;
 		
 		System.out.println("-=-=-=-=-=-=-=-=-Receipt-=-=-=-=-=-=-=-=-");
 		format(item1, price1);
@@ -40,9 +42,8 @@ public class superReceipt
 		format(item4, price4);
 		System.out.println("");
 		format("Subtotal", subtotal);
-		format("Tax", taxationistheft);
-		discount();
 		System.out.printf("\n*%10s ******************** %6.2s%%", "Discount", thereisnoSuchThingasaFreeLunch);
+		format("Tax", taxationistheft);
 		format("Total", total);
 		System.out.println("\n----------------------------------------");
 		System.out.println("* Thanks for your support (Not Really) *");
@@ -55,13 +56,14 @@ public class superReceipt
 	
 	public static void discount()
 	{
-		if(total >= 2000)
+		if(subtotal >= 2000)
 		{
-			total = 0.85*total;
+			secondsubtotal = 0.85*subtotal;
 			thereisnoSuchThingasaFreeLunch = "15";
 		}
 		else
 		{
+			secondsubtotal = subtotal;
 			thereisnoSuchThingasaFreeLunch = "0";
 		}
 	}

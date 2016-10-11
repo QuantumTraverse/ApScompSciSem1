@@ -16,16 +16,10 @@ public class diceGame
 	public static String compare(int h, int c)
 	{
 		if(h > c)
-		{
 			return "You won!";
-		}
 		if(h < c)
-		{
 			return "The computer wins!";
-		}
 		else
-		{
 			return "No one won... :(";
-		}
 	}
 }

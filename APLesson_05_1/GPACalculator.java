@@ -21,28 +21,33 @@ public class GPACalculator
 		System.out.println("Enter your other Elective grade:");
 		String elective = kb.next();
 		double GPA = (calcPoints(math)+calcPoints(science)+calcPoints(english)+calcPoints(history)+calcPoints(language)+calcPoints(compsci)+calcPoints(elective))/7.0;
-		System.out.printf("Your GPA is %.4f",GPA);
+		System.out.printf("Your GPA is %.3f",GPA);
 	}
 	public static int calcPoints(String grade)
 	{
-		String a = "a";
-		String b = "b";
-		String c = "c";
-		String d = "d";
-		String f = "f";
-		if(grade.equals(a))
+		if(grade.equals("A"))
 			return 4;
-		else if(grade.equals(b))
+		else if(grade.equals("a"))
+			return 4;
+		else if(grade.equals("B"))
 			return 3;
-		else if(grade.equals(c))
+		else if(grade.equals("b"))
+			return 3;
+		else if(grade.equals("C"))
 			return 2;
-		else if(grade.equals(d))
+		else if(grade.equals("d"))
+			return 2;
+		else if(grade.equals("D"))
 			return 1;
-		else if(grade.equals(f))
+		else if(grade.equals("d"))
+			return 1;
+		else if(grade.equals("F"))
+			return 0;
+		else if(grade.equals("f"))
 			return 0;
 		else
 		{
-			System.out.println("Technical Difficulties encountered. Make sure grades letters are actual ones.");
+			System.out.println("Technical Difficulties encountered.");
 			return 0;
 		}
 	}

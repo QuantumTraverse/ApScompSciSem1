@@ -5,12 +5,16 @@ public class tableization
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Table Stuff:");
-		int number = kb.nextInt();
-		for(int n = number-1; n >= 1; n--)
+		System.out.println("Insert your factor");
+		int factor = kb.nextInt();
+		System.out.println("Insert your table size");
+		int tablesize = kb.nextInt();
+		int output;
+		System.out.printf("%-8s %8s\n","Number","Output");
+		for(int i = 1; i <= tablesize; i++)
 		{
-			number = number*n;
+			output = i*factor;
+			System.out.printf("%-8d %8d\n",i,output);
 		}
-		System.out.println(number);
 	}
 }

@@ -9,14 +9,7 @@ public class compositeKeeper
 		
 		ArrayList<Integer>collection = new ArrayList<>(Arrays.asList(numbers));
 		
-		int i =0;
-		while(i < collection.size())
-		{
-			if(gFactor(collection.get(i)) == 0)
-				collection.remove(i);
-			else
-				i++;
-		}
+		primeRemover(collection);
 		System.out.println(collection);
 	}
 	public static int gFactor(int n)
@@ -31,5 +24,16 @@ public class compositeKeeper
 			i++;
 		}
 		return 0;
+	}
+	public static void primeRemover (ArrayList<Integer>collection)
+	{
+		int i =0;
+		while(i < collection.size())
+		{
+			if(gFactor(collection.get(i)) == 0)
+				collection.remove(i);
+			else
+				i++;
+		}
 	}
 }

@@ -1,7 +1,8 @@
-public class Money
+public abstract class Money
 {
 	private String name;
 	private double value;
+	private int count;
 	public Money()
 	{
 		this.name = "";
@@ -11,6 +12,26 @@ public class Money
 	{
 		this.name = n;
 		this.value = v;
+	}
+	public abstract String scan();
+	{
+		
+	}
+	public void setCount(int c)
+	{
+		this.count = c;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public double getValue()
+	{
+		return value;
+	}
+	public int getCount()
+	{
+		return count;
 	}
 	public String toString()
 	{

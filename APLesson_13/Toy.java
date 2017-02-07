@@ -1,4 +1,4 @@
-public class Toy
+public abstract class Toy
 {
 	private String name;
 	private int count;

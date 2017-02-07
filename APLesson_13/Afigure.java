@@ -1,5 +1,17 @@
-public class AFigure extends Toy
+public class Afigure extends Toy
 {
+	public Afigure()
+	{
+		super();
+	}
+	public Afigure(String n)
+	{
+		super(n);
+	}
+	public String toString()
+	{
+		super();
+	}
 	public String getType()
 	{
 		return "Action Figure";

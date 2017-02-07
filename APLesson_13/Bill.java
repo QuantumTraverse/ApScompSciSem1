@@ -4,13 +4,18 @@ public class Bill extends Money
 	public Bill()
 	{
 		super();
-		face = "";
+		this.face = "";
 	}
 	public Bill(String n, String f, double v)
 	{
 		super(n, v);
-		face = f;
+		this.face = f;
 	}
+		public String scan()
+	{
+		return face;
+	}
+	
 	public String toString()
 	{
 		return "Face: " + face + "\n" + super.toString();

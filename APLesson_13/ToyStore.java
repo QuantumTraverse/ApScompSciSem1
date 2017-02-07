@@ -5,22 +5,23 @@ public class ToyStore
 	private ArrayList<Toy> toyList;
 	public ToyStore()
 	{
-		system.out.println("Why would you even do this?")
+		System.out.println("Why would you even do this?");
 	}
 	public ToyStore(String list)
 	{
-		this.loadToys(list)
+		this.loadToys(list);
 	}
 	public void loadToys(String list)
 	{
-		ArrayList<Toy> toys
+		ArrayList<String> toys;
 		
 		for(int i =0; i < toys.size; i++)
 		{
 			String name = toys[i];
 			String type = toys[i+1];
-			if(.equals("null")
-				toyList.add(name)
+			Toy object = new Toy(getThatToy(name));
+			if(object.equals("null"))
+				toyList.add(name);
 			else count++;
 		}
 	}
@@ -34,7 +35,7 @@ public class ToyStore
 				return "null";
 		}
 	}
-	public getMostFrequentToy()
+	public String getMostFrequentToy()
 	{
 		String name;
 		int max = 0;
@@ -46,8 +47,9 @@ public class ToyStore
 				name = Toy.getName();
 			}
 		}
+		return name;
 	}
-	public getMostFrequentType()
+	public String getMostFrequentType()
 	{
 		int cars = 0;
 		int figures = 0;
@@ -65,7 +67,7 @@ public class ToyStore
 		else
 			return "Equal amounts";
 	}
-	public toString()
+	public String toString()
 	{
 		return toyList;
 	}

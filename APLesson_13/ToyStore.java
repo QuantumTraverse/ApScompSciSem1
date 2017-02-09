@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.ArrayList; //https://www.youtube.com/watch?v=ODeNHRtVNO4
 public class ToyStore
 {
 	private ArrayList<Toy> toyList;
@@ -13,37 +12,43 @@ public class ToyStore
 	}
 	public void loadToys(String list)
 	{
-		ArrayList<String> toys;
+		String[] toys = list.split(", ");
 		
-		for(int i =0; i < toys.size; i++)
+		for(int i =0; i < toys.length; i+=2)
 		{
 			String name = toys[i];
 			String type = toys[i+1];
-			Toy object = new Toy(getThatToy(name));
-			if(object.equals("null"))
-				toyList.add(name);
-			else count++;
+			Toy t = getThatToy(name);
+			if(t == null)//if t is not on the list...
+			{
+				if(type.equals("Car"))
+					toyList.add(new Car(name));//add a new car to toyList
+				if(type.equals("AF"))
+					toyList.add(new Afigure(name));
+			}
+			else 
+				t.setCount(t.getCount()+1);
 		}
 	}
-	public void getThatToy(String name)
+	public Toy getThatToy(String name)
 	{
-		for(toyList : toy)
+		for(Toy t : toyList) //checking each Toy
 		{
-			if(toy.equals(name))
-				return toy;
-			else
-				return "null";
+			if(t.getName().equals(name))//if it's on the list...
+				return t; //return it
 		}
+		return null; //return null otherwise
 	}
+	
 	public String getMostFrequentToy()
 	{
 		String name;
 		int max = 0;
-		for(toyList : Toy)
+		for(Toy toy : toyList)
 		{
-			if(max < Toy.length())
+			if(max < Toy.getCount())
 			{
-				max = Toy.length();
+				max = Toy.getCount();
 				name = Toy.getName();
 			}
 		}
@@ -53,7 +58,7 @@ public class ToyStore
 	{
 		int cars = 0;
 		int figures = 0;
-		for(toyList : Toy)
+		for(Toy toy : toyList)
 		{
 			if(Toy.getType().equals("Car"))
 				cars++;

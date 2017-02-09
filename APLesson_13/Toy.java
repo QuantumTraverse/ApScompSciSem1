@@ -28,7 +28,7 @@ public abstract class Toy
 	{
 		this.name = n;
 	}
-	public abstract String getType()
+	public abstract String getType();
 	
 	public String toString()
 	{

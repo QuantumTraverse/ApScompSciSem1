@@ -10,7 +10,7 @@ public class Car extends Toy
 		}
 		public String toString()
 		{
-			super();
+			return super.toString();
 		}
 		public String getType()
 		{

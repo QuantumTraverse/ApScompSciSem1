@@ -4,7 +4,7 @@ public class ToyStore
 	private ArrayList<Toy> toyList;
 	public ToyStore()
 	{
-		System.out.println("Why would you even do this?");
+		toyList = new ArrayList<>();
 	}
 	public ToyStore(String list)
 	{
@@ -12,6 +12,7 @@ public class ToyStore
 	}
 	public void loadToys(String list)
 	{
+		toyList = new ArrayList<>();
 		String[] toys = list.split(", ");
 		
 		for(int i =0; i < toys.length; i+=2)
@@ -42,14 +43,14 @@ public class ToyStore
 	
 	public String getMostFrequentToy()
 	{
-		String name;
+		String name = "";
 		int max = 0;
 		for(Toy toy : toyList)
 		{
-			if(max < Toy.getCount())
+			if(max < toy.getCount())
 			{
-				max = Toy.getCount();
-				name = Toy.getName();
+				max = toy.getCount();
+				name = toy.getName();
 			}
 		}
 		return name;
@@ -60,9 +61,9 @@ public class ToyStore
 		int figures = 0;
 		for(Toy toy : toyList)
 		{
-			if(Toy.getType().equals("Car"))
+			if(toy.getType().equals("Car"))
 				cars++;
-			if(Toy.getType().equals("AF"))
+			if(toy.getType().equals("AF"))
 				figures++;
 		}
 		if(cars > figures)
@@ -74,6 +75,6 @@ public class ToyStore
 	}
 	public String toString()
 	{
-		return toyList;
+		return toyList.toString();
 	}
 }

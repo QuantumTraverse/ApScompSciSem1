@@ -5,9 +5,9 @@ public class toyStoreRunner
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Please enter the Toys:");
-		ToyStore object = new ToyStore(kb.nextLine());
-		System.out.println(object);
-		System.out.println("Most Frequent Toy: " + getMostFrequentToy());
-		System.out.println(getMostFrequentType());
+		ToyStore store = new ToyStore(kb.nextLine());
+		System.out.println(store);
+		System.out.println("Most Frequent Toy: " + store.getMostFrequentToy());
+		System.out.println("Most Frequent Type of Toy: " + store.getMostFrequentType());
 	}
 }

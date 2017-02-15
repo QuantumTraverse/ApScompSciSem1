@@ -1,16 +1,12 @@
-public abstract class studentAdvance extends advance
+public class studentAdvance extends advance
 {
 	public studentAdvance()
 	{
 		super();
 	}
-	public studentAdvance(String p)
+	public double getPrice()
 	{
-		super(p);
-	}
-	public double getPrice();
-	{
-		return super()/2;
+		return super.getPrice()/2;
 	}
 	public String toString()
 	{

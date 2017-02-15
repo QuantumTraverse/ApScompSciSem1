@@ -1,10 +1,9 @@
-public class ticket
+public abstract class ticket
 {
 	private double price;
 	private int serialNo;
 	public ticket()
 	{
-		platform = "ERROR";
 		serialNo = (int)(Math.random() * 10000000);
 	}
 	public int getSerial()

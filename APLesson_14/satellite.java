@@ -13,7 +13,7 @@ public class satellite
 		}
 		else
 		{
-			throw new IllegalArgumentException("The String " + run + " does not contain \"yes\""); //Just testing something
+			throw new IllegalArgumentException("The String \"" + run + "\" does not contain \"yes\""); //Just testing something
 		}
 		ArrayList<location> locate = new ArrayList<>();
 		double[] honLoc = {5, 6};

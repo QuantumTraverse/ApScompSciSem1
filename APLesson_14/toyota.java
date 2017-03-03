@@ -1,19 +1,15 @@
 public class toyota implements location
 {
-	private double xcoord, ycoord;
+	private double[] coords;
 	public toyota()
 	{
-		xcoord = 0;
-		ycoord = 0;
+		coords = new double [2];
 	}
 	public toyota(String xAndy)
 	{
-		xcoord = 0;
-		ycoord = 0;
+		coords = new double [2];
 		String[] splitsplat = xAndy.split(",");
-		double deltaX = Double.parseDouble(splitsplat[0]);
-		double deltaY = Double.parseDouble(splitsplat[1]);
-		move(deltaX, deltaY);
+		move(Double.parseDouble(splitsplat[0]), Double.parseDouble(splitsplat[1]));
 	}
 	public int getID()
 	{
@@ -21,14 +17,12 @@ public class toyota implements location
 	}
 	public void move(double x, double y)
 	{
-		xcoord += x;
-		ycoord += y;
+		coords[0] += x;
+		coords[1] += y;
 	}
 	public double[] getLoc()
 	{
-		double [] loco = new double [2];
-		loco[0] = xcoord;
-		loco[1] = ycoord;
+		double [] loco = coords;
 		return loco;
 	}
 }

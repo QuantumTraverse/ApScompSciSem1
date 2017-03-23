@@ -29,7 +29,7 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		else if (findKeyword(statement, "no"))
 		{
 			response = "Why so negative?";
 		}
@@ -62,7 +62,7 @@ public class Magpie2
 
 	/** Ex_02: The findKeyword() Method...
 	 * ========================================================= */
-	private int findKeyword(String statement, String goal, int startPos)
+	private boolean findKeyword(String statement, String goal) //, int startPos
 	{
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement.
@@ -92,17 +92,25 @@ public class Magpie2
 						--return psn
 
 				Otherwise, search for goal in phrase from psn + 1 forward */
-
-		return -1;
+		String[] splitsplat = statement.split(" ");
+		for(String splitted : splitsplat)
+		{
+			splitted = splitted.toLowerCase();
+			String splitTrim = splitted.replaceAll("\"", "");
+			if (splitted.compareTo(goal) == 0 || (splitTrim.compareTo(goal) == 0 && (splitted.substring(0,1).compareTo("a") < 0 ||
+				splitted.substring(splitted.length()-1).compareTo("z") > 0 )))
+				return true;
+		}
+		return false;
 
 	}
 
 	/** Override - this method is used if there are only 2 parameters...*/
-	private int findKeyword(String statement, String goal)
+	/* private int findKeyword(String statement, String goal)
 	{
 		//set startPos to 0 if not specified
 		return findKeyword(statement, goal, 0);
-	}
+	} */
 
 	/** getRandomResponse() method
 	 * =============================================================*/

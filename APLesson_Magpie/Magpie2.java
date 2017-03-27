@@ -34,10 +34,10 @@ public class Magpie2
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother")
+				|| findKeyword(statement, "father")
+				|| findKeyword(statement, "sister")
+				|| findKeyword(statement, "brother"))
 		{
 			response = "Tell me more about your family.";
 		}
@@ -52,7 +52,19 @@ public class Magpie2
 		 * Create addtional code (another else if) that
 		 * responds "He sounds like a pretty dank teacher"
 		 * if you mention "Robinette" in your statement */
-
+		else if (findKeyword(statement, "dog")
+				|| findKeyword(statement, "cat")
+				|| findKeyword(statement, "fish")
+				|| findKeyword(statement, "turtle"))
+		{
+			response = "Tell me more about your pet";
+		}
+		
+		else if (findKeyword(statement, "Robinette"))
+		{
+			response = "He sounds like a pretty dank teacher";
+		}
+		
 		else
 		{
 			response = getRandomResponse();
@@ -96,11 +108,31 @@ public class Magpie2
 		for(String splitted : splitsplat)
 		{
 			splitted = splitted.toLowerCase();
-			String splitTrim = splitted.replaceAll("\"", "");
-			if (splitted.compareTo(goal) == 0 || (splitTrim.compareTo(goal) == 0 && (splitted.substring(0,1).compareTo("a") < 0 ||
-				splitted.substring(splitted.length()-1).compareTo("z") > 0 )))
+			splitted = splitted.replaceAll("\\.", "");
+			for(int i = 0; i < splitted.length(); i++)
+			{
+				String bad = splitted.substring(i, i+1);
+				if(bad.compareTo("a") < 0 || bad.compareTo("z") > 0)
+					splitted = splitted.replaceAll(bad, "");
+			}
+			if(splitted.compareTo(goal) == 0)
 				return true;
-		}
+			
+		}	
+			
+			
+			
+/* 			System.out.println(splitted);
+			String before = splitted.substring(0, 1);
+			String after = splitted.substring(splitted.length() -1);
+			
+			if(before.compareTo("a") < 0 || before.compareTo("z") > 0)
+				splitted = splitted.replaceAll(before, "");
+			if(after.compareTo("a") < 0 || after.compareTo("z") > 0)
+				splitted = splitted.replaceAll(after, "");
+				//System.out.println(splitTrim); */
+			
+			
 		return false;
 
 	}

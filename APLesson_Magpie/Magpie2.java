@@ -57,12 +57,12 @@ public class Magpie2
 				|| findKeyword(statement, "fish")
 				|| findKeyword(statement, "turtle"))
 		{
-			response = "Tell me more about your pet";
+			response = "Tell me more about your pet.";
 		}
 		
 		else if (findKeyword(statement, "Robinette"))
 		{
-			response = "He sounds like a pretty dank teacher";
+			response = "He sounds like a pretty dank teacher.";
 		}
 		
 		else
@@ -104,6 +104,8 @@ public class Magpie2
 						--return psn
 
 				Otherwise, search for goal in phrase from psn + 1 forward */
+				
+		//Please do not straight-up copy this code, especially if you don't know how this is different than the instructions
 		String[] splitsplat = statement.split(" ");
 		for(String splitted : splitsplat)
 		{
@@ -117,11 +119,7 @@ public class Magpie2
 			}
 			if(splitted.compareTo(goal) == 0)
 				return true;
-			
 		}	
-			
-			
-			
 /* 			System.out.println(splitted);
 			String before = splitted.substring(0, 1);
 			String after = splitted.substring(splitted.length() -1);
@@ -132,9 +130,7 @@ public class Magpie2
 				splitted = splitted.replaceAll(after, "");
 				//System.out.println(splitTrim); */
 			
-			
 		return false;
-
 	}
 
 	/** Override - this method is used if there are only 2 parameters...*/

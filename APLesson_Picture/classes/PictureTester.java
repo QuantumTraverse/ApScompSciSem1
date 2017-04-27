@@ -91,12 +91,21 @@ public class PictureTester
     temple.explore();
   }
   
-  /** Method to test mirrorTemple */
+  /** Method to test mirrorArms */
   public static void testMirrorArms()
   {
     Picture temple = new Picture("snowman.jpg");
     temple.explore();
     temple.mirrorArms();
+    temple.explore();
+  }
+  
+  /** Method to test mirrorGull */
+  public static void testMirrorGull()
+  {
+    Picture temple = new Picture("seagull.jpg");
+    temple.explore();
+    temple.mirrorGull();
     temple.explore();
   }
   
@@ -108,11 +117,25 @@ public class PictureTester
     canvas.explore();
   }
   
+  public static void testCopy()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.createCollage2();
+    canvas.explore();
+  }
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
+    swan.explore();
+  }
+  
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.betterEdgeDetection(10);
     swan.explore();
   }
   
@@ -135,13 +158,13 @@ public class PictureTester
 	// testMirrorHorizontal();
 	// testMirrorHorizontalBottomToTop();
     // testMirrorTemple();
-    testMirrorArms();
+    // testMirrorArms();
     // testMirrorGull();
     // testMirrorDiagonal();
     // testCollage();
     // testCopy();
-    // testEdgeDetection();
-    // testEdgeDetection2();
+    testEdgeDetection();
+    testEdgeDetection2();
     // testChromakey();
     // testEncodeAndDecode();
     // testGetCountRedOverValue(250);

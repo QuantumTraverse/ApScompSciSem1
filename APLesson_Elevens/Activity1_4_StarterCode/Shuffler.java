@@ -8,7 +8,7 @@ public class Shuffler {
 	 * to each sorting procedure.
 	 */
 	private static final int SHUFFLE_COUNT = 1;
-
+	private static final int VALUE_XOUNT = 10;
 
 	/**
 	 * Tests shuffling methods.
@@ -50,9 +50,27 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int midPoint = values.length/2;
+		int i = 0;
+		int j = 0;
+		
+		for (; i < midPoint; i++)
+		{
+			values[i] = shuffled[j];
+			j += 2;
+		}
+		j = 1;
+		for(; i < values.length; i++)
+		{	
+			values[i] = shuffled[j];
+			j += 2;
+		}
+		for(int k = 0; k < shuffled.length; k++)
+		{
+			values[k]=shuffled[k];
+		}
 	}
-
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
 	 * The selection shuffle algorithm conceptually maintains two sequences
@@ -64,7 +82,14 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
+	
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		for( int i = VALUE_XOUNT - 1; i >= 0; i-- ) 
+        	{
+            	int j = (int)(Math.random() * i);
+            	int tempHolder = values[j];
+            	values[j] = values[i];
+            	values[i] = tempHolder;
+        	}
 	}
 }

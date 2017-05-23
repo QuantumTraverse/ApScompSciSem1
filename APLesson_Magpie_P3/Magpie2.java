@@ -232,7 +232,7 @@ public class Magpie2
 			statement = statement.substring(0, statement.length() - 1);
 		int psnOfYou = findKeyword(statement, "i", 0);
 		int psnOfMe = findKeyword(statement, "you", psnOfYou + 1);
-		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+		String restOfStatement = statement.substring(psnOfYou + 1, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
 	/** getRandomResponse() method

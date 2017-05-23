@@ -81,6 +81,10 @@ public class Magpie2
 			{
 				response = transformYouMeStatement(statement);
 			}
+			else if (psn >= 0 && findKeyword(statement, "i", psn) >= 0)
+			{
+				response = transformIYouStatement(statement);
+			}
 			else
 			{
 				response = getRandomResponse();
@@ -217,6 +221,17 @@ public class Magpie2
 			statement = statement.substring(0, statement.length() - 1);
 		int psnOfYou = findKeyword(statement, "you", 0);
 		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
+		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+		return "What makes you think that I " + restOfStatement + " you?";
+	}
+	private String transformIYouStatement(String statement)
+	{
+		statement = statement.trim().toLowerCase();
+		String LastChar = statement.substring(statement.length() - 1, statement.length());
+		if(LastChar.equals("."))
+			statement = statement.substring(0, statement.length() - 1);
+		int psnOfYou = findKeyword(statement, "i", 0);
+		int psnOfMe = findKeyword(statement, "you", psnOfYou + 1);
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
 	}

@@ -77,7 +77,8 @@ public class Magpie2
 			int psn = findKeyword(statement, "you", 0);
 			//findKeyword(statement, "you")
 
-			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
+			if (psn >= 0
+					&& findKeyword(statement, "me", psn) >= 0)
 			{
 				response = transformYouMeStatement(statement);
 			}
@@ -215,12 +216,13 @@ public class Magpie2
 	   * Set new String restOfStatement to the rest of statement after "You" + 3,
 	   * and before "me".
 	   */
-		statement = statement.trim().toLowerCase();
-		String LastChar = statement.substring(statement.length() - 1, statement.length());
-		if(LastChar.equals("."))
+		statement = statement.trim();
+		String lastChar = statement.substring(statement.length() - 1);
+		if (lastChar.equals("."))
 			statement = statement.substring(0, statement.length() - 1);
-		int psnOfYou = findKeyword(statement, "you", 0);
-		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
+		
+		int psnOfYou = findKeyword (statement, "you", 0);
+		int psnOfMe = findKeyword (statement, "me", psnOfYou + 3);
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
 	}

@@ -1,6 +1,3 @@
-/**
- * This is a class that tests the Deck class.
- */
 public class DeckTester {
 
 	/**

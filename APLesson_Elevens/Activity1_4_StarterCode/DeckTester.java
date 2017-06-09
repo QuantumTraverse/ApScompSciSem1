@@ -14,13 +14,13 @@ public class DeckTester {
 		Deck thurston = new Deck(ranks1, suits1, pointValues1);
 		Deck howell = new Deck(ranks2, suits1, pointValues2);
 		Deck iii = new Deck(ranks1, suits2, pointValues1);
-		System.out.println(thurston);
-		System.out.println(thurston.isEmpty());
-		System.out.println(thurston.deal());
-		thurston.shuffle();
-		System.out.println(howell);
-		System.out.println(howell);
-		System.out.println(iii);
-		System.out.println(iii.isEmpty());
+		//System.out.println(thurston);
+		//System.out.println(thurston.isEmpty());
+		//System.out.println(thurston.deal());
+		//thurston.shuffle();
+		//System.out.println(howell);
+		//System.out.println(howell);
+		//System.out.println(iii);
+		//System.out.println(iii.isEmpty());
 	}
 }

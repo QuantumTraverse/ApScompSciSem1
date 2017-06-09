@@ -14,6 +14,8 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+		int uPsn = findKeyword(statement, "you", 0);
+		int iPsn = findKeyword(statement, "I", 0);
 
 		/** Exercise_01:
 		 * ==================================================
@@ -66,8 +68,6 @@ public class Magpie2
 		}
 		
 		// Responses which require transformations
-		int uPsn = findKeyword(statement, "you", 0);
-		int iPsn = findKeyword(statement, "I", 0);
 		else if (uPsn >= 0 && findKeyword(statement, "me", uPsn) >= 0) {
 			response = transformYouMeStatement(statement);
 		}
@@ -76,9 +76,6 @@ public class Magpie2
 		}
 		else if (findKeyword(statement, "I want to", 0) >= 0) {
 			response = transformIWantToStatement(statement);
-		}
-		else if (findKeyword(statement, "I want", 0) >= 0) {
-			response = transformIWantStatement(statement);
 		}
 		else {
 			response = getRandomResponse();

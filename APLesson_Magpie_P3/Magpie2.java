@@ -68,7 +68,7 @@ public class Magpie2
 		// Responses which require transformations
 		int uPsn = findKeyword(statement, "you", 0);
 		int iPsn = findKeyword(statement, "I", 0);
-		else if (youPsn >= 0 && findKeyword(statement, "me", uPsn) >= 0) {
+		else if (uPsn >= 0 && findKeyword(statement, "me", uPsn) >= 0) {
 			response = transformYouMeStatement(statement);
 		}
 		else if (iPsn >= 0 && findKeyword(statement, "you", iPsn) >= 0) {

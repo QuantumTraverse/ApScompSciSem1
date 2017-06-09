@@ -66,30 +66,22 @@ public class Magpie2
 		}
 		
 		// Responses which require transformations
-		else if (findKeyword(statement, "I want to") >= 0)
-		{
-		  response = transformIWantToStatement(statement);
+		int uPsn = findKeyword(statement, "you", 0);
+		int iPsn = findKeyword(statement, "I", 0);
+		else if (youPsn >= 0 && findKeyword(statement, "me", uPsn) >= 0) {
+			response = transformYouMeStatement(statement);
 		}
-
-		else
-		{
-			// Look for a two word (you <something> me) pattern
-			int psn = findKeyword(statement, "you", 0);
-			//findKeyword(statement, "you")
-
-			if (psn >= 0
-					&& findKeyword(statement, "me", psn) >= 0)
-			{
-				response = transformYouMeStatement(statement);
-			}
-			else if (psn >= 0 && findKeyword(statement, "i", psn) >= 0)
-			{
-				response = transformIYouStatement(statement);
-			}
-			else
-			{
-				response = getRandomResponse();
-			}
+		else if (iPsn >= 0 && findKeyword(statement, "you", iPsn) >= 0) {
+			response = transformIYouStatement(statement);
+		}
+		else if (findKeyword(statement, "I want to", 0) >= 0) {
+			response = transformIWantToStatement(statement);
+		}
+		else if (findKeyword(statement, "I want", 0) >= 0) {
+			response = transformIWantStatement(statement);
+		}
+		else {
+			response = getRandomResponse();
 		}
 		return response;
 	}
